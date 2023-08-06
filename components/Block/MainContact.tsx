@@ -73,77 +73,75 @@ const MainContact = ({}: Props) => {
       <span id="contact" />
       <div css={component}>
         <MainTit tit="お問い合わせ" />
-        <MaxWidth>
-          <Wrap width="60">
-            <p css={pCss}>ご購入・販売に関しましては、下記よりお気軽にお問い合わせください。</p>
-            <div css={form}>
-              <p className="head">お問い合わせメールフォーム</p>
-              {!send ? (
-                <form css={formCss} onSubmit={submit}>
-                  <Radio
-                    label="お問い合わせ種類"
-                    name="kind"
-                    onChange={updateKind}
-                    radioItems={['弊社製品について', 'いちご狩りについて', 'その他のお問い合わせ']}
-                    required={true}
-                    value={userKind}
-                  />
-                  <Input
-                    label="お名前"
-                    name="name"
-                    onChange={updateUserName}
-                    required={true}
-                    type="text"
-                    value={userName}
-                  />
-                  <Input
-                    label="郵便番号"
-                    name="postal-code"
-                    onChange={updatePostalCode}
-                    postalCode={true}
-                    required={false}
-                    type="text"
-                    value={postalCode}
-                  />
-                  <Input
-                    label="ご住所"
-                    name="address"
-                    onChange={updateUserAddress}
-                    required={true}
-                    type="text"
-                    value={userAddress}
-                  />
-                  <Input
-                    label="メールアドレス"
-                    name="email"
-                    onChange={updateUserEmail}
-                    required={true}
-                    type="email"
-                    value={userEmail}
-                  />
-                  <Input
-                    label="電話番号"
-                    name="tel"
-                    onChange={updateUserTel}
-                    required={true}
-                    type="tel"
-                    value={userTel}
-                  />
-                  <Textarea
-                    label="お問い合わせ内容"
-                    name="cont"
-                    onChange={updateUserCont}
-                    required={true}
-                    value={userCont}
-                  />
-                  <Submit />
-                </form>
-              ) : (
-                <p className="completion">送信完了しました。ありがとうございました。</p>
-              )}
-            </div>
-          </Wrap>
-        </MaxWidth>
+        <Wrap width="60">
+          <p css={pCss}>ご購入・販売に関しましては、下記よりお気軽にお問い合わせください。</p>
+          <div css={form}>
+            <p className="head">お問い合わせメールフォーム</p>
+            {!send ? (
+              <form css={formCss} onSubmit={submit}>
+                <Radio
+                  label="お問い合わせ種類"
+                  name="kind"
+                  onChange={updateKind}
+                  radioItems={['弊社製品について', 'いちご狩りについて', 'その他のお問い合わせ']}
+                  required={true}
+                  value={userKind}
+                />
+                <Input
+                  label="お名前"
+                  name="name"
+                  onChange={updateUserName}
+                  required={true}
+                  type="text"
+                  value={userName}
+                />
+                <Input
+                  label="郵便番号"
+                  name="postal-code"
+                  onChange={updatePostalCode}
+                  postalCode={true}
+                  required={false}
+                  type="text"
+                  value={postalCode}
+                />
+                <Input
+                  label="ご住所"
+                  name="address"
+                  onChange={updateUserAddress}
+                  required={true}
+                  type="text"
+                  value={userAddress}
+                />
+                <Input
+                  label="メールアドレス"
+                  name="email"
+                  onChange={updateUserEmail}
+                  required={true}
+                  type="email"
+                  value={userEmail}
+                />
+                <Input
+                  label="電話番号"
+                  name="tel"
+                  onChange={updateUserTel}
+                  required={true}
+                  type="tel"
+                  value={userTel}
+                />
+                <Textarea
+                  label="お問い合わせ内容"
+                  name="cont"
+                  onChange={updateUserCont}
+                  required={true}
+                  value={userCont}
+                />
+                <Submit />
+              </form>
+            ) : (
+              <p className="completion">送信完了しました。ありがとうございました。</p>
+            )}
+          </div>
+        </Wrap>
       </div>
     </>
   );
@@ -166,6 +164,8 @@ const component = css`
 const form = css`
   background-color: var(--white);
   border-radius: 20px;
+  margin: 0 auto;
+  max-width: 740px;
   padding: 2.2rem 4.5rem 2.5rem;
 
   & > p {

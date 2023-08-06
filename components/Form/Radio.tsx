@@ -70,7 +70,6 @@ const flex = css`
   }
 
   ${mq.s} {
-    justify-content: space-between;
     margin-bottom: calc(var(--form-mb) * 2);
     width: 100%;
   }

@@ -10,7 +10,7 @@ const Home: NextPage<Props> = () => {
   return (
     <>
       <Hd />
-      <LoadingAnim />
+      {/* <LoadingAnim /> */}
       <MobileHeader />
       <MainVisual />
       <Header />

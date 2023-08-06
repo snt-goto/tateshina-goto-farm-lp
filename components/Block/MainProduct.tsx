@@ -74,44 +74,46 @@ const MainProduct = ({}: Props) => {
       <span id="product" />
       <div css={component}>
         <MainTit tit="製品一覧" />
-        <Swiper
-          breakpoints={{
-            0: {
-              slidesPerView: 1.3
-            },
-            520: {
-              slidesPerView: 2.4
-            },
-            768: {
-              slidesPerView: 3.5
-            }
-          }}
-          css={swiper}
-          grabCursor={true}
-          centeredSlides={true}
-          loop={true}
-          spaceBetween={24}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false
-          }}
-          speed={800}
-          modules={[Autoplay]}
-        >
-          {productItems.map((i, n) => {
-            return (
-              <SwiperSlide key={n}>
-                <div css={img}>
-                  <FixedRadioImg src={i.src} />
-                </div>
-                <div css={txt}>
-                  <p>{i.tit}</p>
-                  <p>￥{i.price.toLocaleString()}（税込）</p>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+        <div css={swiperArea}>
+          <Swiper
+            breakpoints={{
+              0: {
+                slidesPerView: 1.3
+              },
+              520: {
+                slidesPerView: 2.4
+              },
+              768: {
+                slidesPerView: 3.5
+              }
+            }}
+            css={swiper}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            spaceBetween={24}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false
+            }}
+            speed={800}
+            modules={[Autoplay]}
+          >
+            {productItems.map((i, n) => {
+              return (
+                <SwiperSlide key={n}>
+                  <div css={img}>
+                    <FixedRadioImg src={i.src} />
+                  </div>
+                  <div css={txt}>
+                    <p>{i.tit}</p>
+                    <p>￥{i.price.toLocaleString()}（税込）</p>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
       </div>
     </>
   );
@@ -162,6 +164,11 @@ const swiper = css`
   ${mq.xs} {
     margin-top: 4rem;
   }
+`;
+
+const swiperArea = css`
+  margin: 0 auto;
+  max-width: 1350px;
 `;
 
 const txt = css`

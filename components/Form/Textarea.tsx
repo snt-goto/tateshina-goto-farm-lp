@@ -77,7 +77,6 @@ const flex = css`
   }
 
   ${mq.s} {
-    justify-content: space-between;
     margin-bottom: var(--form-mb);
     width: 100%;
   }
