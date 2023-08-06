@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 
 import { Required } from 'components/Form';
 
+import { mq } from 'styles/media';
+
 interface Props {
   label: string;
   name: string;
@@ -50,6 +52,29 @@ const component = css`
       width: calc((100% - var(--form-label-width)) / 2);
     }
   }
+
+  ${mq.m} {
+    & > input {
+      width: calc(100% - var(--form-label-width_mq-m));
+
+      &.postal-code {
+        width: calc((100% - var(--form-label-width_mq-m)) / 2);
+      }
+    }
+  }
+
+  ${mq.s} {
+    align-items: flex-start;
+    flex-direction: column;
+
+    & > input {
+      width: 100%;
+
+      &.postal-code {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const flex = css`
@@ -63,6 +88,16 @@ const flex = css`
     font-family: var(--noto-sans-jp);
     font-size: 1rem;
     font-weight: 700;
+  }
+
+  ${mq.m} {
+    width: var(--form-label-width_mq-m);
+  }
+
+  ${mq.s} {
+    justify-content: space-between;
+    margin-bottom: var(--form-mb);
+    width: 100%;
   }
 `;
 

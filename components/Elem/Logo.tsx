@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
 
+import { mq } from 'styles/media';
+
 interface Props {
   layout: string;
 }
@@ -19,6 +21,27 @@ const component = css`
   flex-direction: column;
   position: relative;
 
+  & > img {
+    display: block;
+
+    &:nth-child(1) {
+      height: auto;
+      margin: 0 auto 7%;
+      width: 30%;
+    }
+
+    &:nth-child(2) {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &.footer,
+  &.header,
+  &.mobile {
+    width: 17rem;
+  }
+
   &.header {
     transform: translateY(calc(-6rem / 2));
 
@@ -36,29 +59,52 @@ const component = css`
     }
   }
 
-  &.footer,
-  &.header,
   &.loading-anim {
-    width: 17rem;
+    width: 22rem;
+  }
 
-    & > img {
-      display: block;
+  ${mq.m} {
+    &.footer,
+    &.header,
+    &.mobile {
+      width: 15.3rem;
+    }
 
-      &:nth-child(1) {
-        height: auto;
-        margin: 0 auto 7%;
-        width: 30%;
+    &.header {
+      transform: translateY(calc(-5.5rem / 2));
+
+      &::after {
+        height: 9rem;
+        top: calc(5.5rem / 2);
+        width: 9rem;
       }
+    }
 
-      &:nth-child(2) {
-        height: auto;
-        width: 100%;
-      }
+    &.loading-anim {
+      width: 20rem;
     }
   }
 
-  &.loading-anim {
-    width: 22rem;
+  ${mq.xs} {
+    &.footer,
+    &.header,
+    &.mobile {
+      width: 13.6rem;
+    }
+
+    &.header {
+      transform: translateY(calc(-5rem / 2));
+
+      &::after {
+        height: 8.5rem;
+        top: calc(5rem / 2);
+        width: 8.5rem;
+      }
+    }
+
+    &.loading-anim {
+      width: 18rem;
+    }
   }
 `;
 

@@ -3,6 +3,8 @@ import { css } from '@emotion/react';
 import { Logo } from 'components/Elem';
 import { HeaderNav } from 'components/Item';
 
+import { mq } from 'styles/media';
+
 interface Props {}
 
 const Header = ({}: Props) => {
@@ -72,10 +74,20 @@ const flex = css`
     list-style: none;
     margin-bottom: 4.2rem;
   }
+
+  ${mq.m} {
+    & > ul {
+      display: none;
+    }
+  }
 `;
 
 const logo = css`
   margin: 0 3rem;
+
+  ${mq.l} {
+    margin: 0 2.5rem;
+  }
 `;
 
 export default Header;

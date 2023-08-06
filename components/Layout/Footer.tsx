@@ -3,6 +3,8 @@ import { css } from '@emotion/react';
 import { Logo } from 'components/Elem';
 import { FooterNav } from 'components/Item';
 
+import { mq } from 'styles/media';
+
 interface Props {}
 
 const Footer = ({}: Props) => {
@@ -64,6 +66,22 @@ const component = css`
     text-align: center;
     width: 100%;
   }
+
+  ${mq.m} {
+    padding-top: 1.4rem;
+
+    & > p {
+      padding: 1.1rem 0;
+    }
+  }
+
+  ${mq.xs} {
+    padding-top: 1.3rem;
+
+    & > p {
+      padding: 1rem 0;
+    }
+  }
 `;
 
 const section = css`
@@ -95,6 +113,43 @@ const section = css`
     justify-content: center;
     list-style: none;
     margin: 3rem 0 5.5rem;
+  }
+
+  ${mq.m} {
+    & > img {
+      &:nth-of-type(1) {
+        left: 1rem;
+        width: 9.9rem;
+      }
+
+      &:nth-of-type(2) {
+        width: 11.3rem;
+      }
+    }
+
+    & > ul {
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 2.7rem 0 5rem;
+    }
+  }
+
+  ${mq.xs} {
+    & > img {
+      &:nth-of-type(1) {
+        left: 0.5rem;
+        width: 8.8rem;
+      }
+
+      &:nth-of-type(2) {
+        width: 10.1rem;
+      }
+    }
+
+    & > ul {
+      margin: 2.4rem 0 6rem;
+    }
   }
 `;
 

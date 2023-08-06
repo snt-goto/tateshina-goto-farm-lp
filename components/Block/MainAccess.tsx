@@ -7,6 +7,8 @@ import { Access } from 'components/Item';
 
 import { setPageLink } from 'feature';
 
+import { mq } from 'styles/media';
+
 interface Props {}
 
 const MainAccess = ({}: Props) => {
@@ -70,6 +72,24 @@ const component = css`
     width: 15rem;
     z-index: 1;
   }
+
+  ${mq.m} {
+    padding: 6.1rem 0 5.2rem;
+
+    & > img {
+      right: 1rem;
+      width: 13.5rem;
+    }
+  }
+
+  ${mq.xs} {
+    padding: 6.6rem 0 5.6rem;
+
+    & > img {
+      right: 0.5rem;
+      width: 12rem;
+    }
+  }
 `;
 
 const flex = css`
@@ -87,6 +107,39 @@ const flex = css`
     list-style: none;
     margin-right: 2rem;
     width: 50%;
+  }
+
+  ${mq.m} {
+    margin-top: 4.9rem;
+
+    & > div {
+      height: 22.8rem;
+    }
+
+    & > ul {
+      margin-right: 1.5rem;
+    }
+  }
+
+  ${mq.s} {
+    flex-direction: column;
+
+    & > ul {
+      margin: 0 0 2.3rem;
+      width: 100%;
+    }
+  }
+
+  ${mq.xs} {
+    margin-top: 4.4rem;
+
+    & > div {
+      height: 24.8rem;
+    }
+
+    & > ul {
+      margin: 0 0 2.1rem;
+    }
   }
 `;
 

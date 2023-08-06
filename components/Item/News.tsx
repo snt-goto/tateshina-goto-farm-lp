@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
 
+import { mq } from 'styles/media';
+
 interface Props {
   date: string;
   tit: string;
@@ -40,6 +42,32 @@ const component = css`
       color: var(--color-1);
       font-size: 1rem;
     }
+  }
+
+  ${mq.m} {
+    padding: 1.2rem 0;
+
+    & > p {
+      :nth-child(1) {
+        width: 10.8rem;
+      }
+    }
+  }
+
+  ${mq.s} {
+    flex-direction: column;
+    text-align: center;
+
+    & > p {
+      :nth-child(1) {
+        margin-bottom: 0.2rem;
+        width: 100%;
+      }
+    }
+  }
+
+  ${mq.m} {
+    padding: 1.1rem 0;
   }
 `;
 

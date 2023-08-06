@@ -2,12 +2,14 @@ import { css } from '@emotion/react';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import 'swiper/css';
+
 import { FixedRadioImg } from 'components/Img';
 import { MainTit } from 'components/Tit';
 
 import { setPageLink } from 'feature';
 
-import 'swiper/css';
+import { mq } from 'styles/media';
 
 interface Props {}
 
@@ -75,9 +77,12 @@ const MainProduct = ({}: Props) => {
         <Swiper
           breakpoints={{
             0: {
-              slidesPerView: 1.2
+              slidesPerView: 1.3
             },
-            750: {
+            520: {
+              slidesPerView: 2.4
+            },
+            768: {
               slidesPerView: 3.5
             }
           }}
@@ -116,12 +121,28 @@ const component = css`
   background-color: var(--color-2);
   padding: 7.5rem 0 5.8rem;
   position: relative;
+
+  ${mq.m} {
+    padding: 6.8rem 0 5.3rem;
+  }
+
+  ${mq.xs} {
+    padding: 6.1rem 0 4.8rem;
+  }
 `;
 
 const img = css`
   height: 10.3rem;
   position: relative;
   width: 100%;
+
+  ${mq.m} {
+    height: 9.3rem;
+  }
+
+  ${mq.xs} {
+    height: 8.3rem;
+  }
 `;
 
 const swiper = css`
@@ -132,6 +153,14 @@ const swiper = css`
     display: flex;
     flex-direction: column;
     height: auto;
+  }
+
+  ${mq.m} {
+    margin-top: 4.5rem;
+  }
+
+  ${mq.xs} {
+    margin-top: 4rem;
   }
 `;
 
@@ -156,6 +185,22 @@ const txt = css`
 
     &:nth-of-type(2) {
       font-weight: 400;
+    }
+  }
+
+  ${mq.m} {
+    padding: 0.9rem;
+
+    &:nth-of-type(1) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  ${mq.xs} {
+    padding: 0.8rem;
+
+    &:nth-of-type(1) {
+      margin-bottom: 1.8rem;
     }
   }
 `;

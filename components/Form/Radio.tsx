@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 
 import { Required } from 'components/Form';
 
+import { mq } from 'styles/media';
+
 interface Props {
   label: string;
   name: string;
@@ -44,6 +46,10 @@ const component = css`
   display: flex;
   padding-top: var(--form-padding);
   position: relative;
+
+  ${mq.s} {
+    flex-direction: column;
+  }
 `;
 
 const flex = css`
@@ -57,6 +63,16 @@ const flex = css`
     font-family: var(--noto-sans-jp);
     font-size: 1rem;
     font-weight: 700;
+  }
+
+  ${mq.m} {
+    width: var(--form-label-width_mq-m);
+  }
+
+  ${mq.s} {
+    justify-content: space-between;
+    margin-bottom: calc(var(--form-mb) * 2);
+    width: 100%;
   }
 `;
 
@@ -98,97 +114,24 @@ const radio = css`
     font-size: 1rem;
     font-weight: 400;
   }
+
+  ${mq.m} {
+    &.active {
+      &::after {
+        border: 5.5px solid var(--color-1);
+      }
+    }
+  }
+
+  ${mq.xs} {
+    &.active {
+      &::after {
+        border: 5px solid var(--color-1);
+      }
+    }
+  }
 `;
 
 const radioArea = css``;
 
 export default Radio;
-
-// import { css } from "@emotion/react";
-
-// import { Required } from "components/Form";
-
-// interface Props {
-//   label: string;
-//   name: string;
-//   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-//   radioItems: string[];
-//   required: boolean;
-// }
-
-// const Radio = ({ label, name, onChange, radioItems, required }: Props) => {
-//   return (
-//     <div css={component}>
-//       <div css={flex}>
-//         <p>{label}</p>
-//         {required ? <Required /> : ""}
-//       </div>
-//       <div css={radioArea}>
-//         {radioItems.map((i, n) => {
-//           return (
-//             <div css={radio} className={`radio-${name}`} key={n}>
-//               <input name={name} type="radio" value={i} onChange={onChange} />
-//               <label>{i}</label>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// };
-
-// const component = css`
-//   align-items: flex-start;
-//   display: flex;
-//   padding-top: var(--form-padding);
-//   position: relative;
-// `;
-
-// const flex = css`
-//   align-items: center;
-//   display: flex;
-//   flex-shrink: 0;
-//   width: var(--form-label-width);
-
-//   & > p:nth-child(1) {
-//     color: var(--color-1);
-//     font-family: var(--noto-sans-jp);
-//     font-size: 1rem;
-//     font-weight: 700;
-//   }
-// `;
-
-// const radio = css`
-//   &:nth-child(n + 2) {
-//     margin-top: 0.6rem;
-//   }
-
-//   & > input {
-//     display: none;
-//   }
-
-//   & > label {
-//     align-items: center;
-//     color: var(--color-1);
-//     display: flex;
-//     font-family: var(--noto-sans-jp);
-//     font-size: 1rem;
-//     font-weight: 400;
-//     position: relative;
-
-//     &::before {
-//       border: 2px solid var(--color-1);
-//       border-radius: 50%;
-//       content: "";
-//       display: block;
-//       flex-shrink: 0;
-//       height: 1rem;
-//       margin-right: 0.4rem;
-//       width: 1rem;
-//     }
-//   }
-// `;
-
-// const radioArea = css``;
-
-// export default Radio;

@@ -6,6 +6,8 @@ import { MainTit } from 'components/Tit';
 
 import { setPageLink } from 'feature';
 
+import { mq } from 'styles/media';
+
 interface Props {}
 
 const MainFaq = ({}: Props) => {
@@ -72,11 +74,37 @@ const component = css`
     width: 17.5rem;
     z-index: 1;
   }
+
+  ${mq.m} {
+    padding: 5.1rem 0;
+
+    & > img {
+      left: 2rem;
+      width: 15.8rem;
+    }
+  }
+
+  ${mq.xs} {
+    padding: 4.6rem 0;
+
+    & > img {
+      left: 1.5rem;
+      width: 14.1rem;
+    }
+  }
 `;
 
 const ulCss = css`
   list-style: none;
   margin-top: 4.5rem;
+
+  ${mq.m} {
+    margin-top: 4.1rem;
+  }
+
+  ${mq.xs} {
+    margin-top: 3.7rem;
+  }
 `;
 
 export default MainFaq;

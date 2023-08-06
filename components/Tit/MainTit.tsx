@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
 
+import { mq } from 'styles/media';
+
 interface Props {
   tit: string;
 }
@@ -15,6 +17,22 @@ const component = css`
   font-weight: 700;
   position: relative;
   text-align: center;
+
+  ${mq.l} {
+    font-size: 1.9rem;
+  }
+
+  ${mq.m} {
+    font-size: 1.8rem;
+  }
+
+  ${mq.s} {
+    font-size: 1.7rem;
+  }
+
+  ${mq.xs} {
+    font-size: 1.6rem;
+  }
 `;
 
 export default MainTit;

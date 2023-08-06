@@ -9,6 +9,8 @@ import config from 'config';
 
 import { setPageLink } from 'feature';
 
+import { mq } from 'styles/media';
+
 interface Props {}
 
 const MainContact = ({}: Props) => {
@@ -151,6 +153,14 @@ const component = css`
   background-color: var(--color-2);
   padding: 6.5rem 0 1.8rem;
   position: relative;
+
+  ${mq.m} {
+    padding: 5.9rem 0 1.7rem;
+  }
+
+  ${mq.xs} {
+    padding: 5.3rem 0 1.6rem;
+  }
 `;
 
 const form = css`
@@ -175,11 +185,33 @@ const form = css`
       margin-bottom: 2.6rem;
     }
   }
+
+  ${mq.m} {
+    border-radius: 15px;
+    padding: 2rem 3rem 2.3rem;
+  }
+
+  ${mq.xs} {
+    border-radius: 10px;
+    padding: 1.8rem 1.5rem 2.1rem;
+  }
 `;
 
 const formCss = css`
   & > div:nth-child(n + 2) {
     margin-top: 1.5rem;
+  }
+
+  ${mq.m} {
+    & > div:nth-child(n + 2) {
+      margin-top: 1.4rem;
+    }
+  }
+
+  ${mq.xs} {
+    & > div:nth-child(n + 2) {
+      margin-top: 1.3rem;
+    }
   }
 `;
 
@@ -190,6 +222,14 @@ const pCss = css`
   font-weight: 700;
   margin: 4rem 0 5.8rem;
   text-align: center;
+
+  ${mq.m} {
+    margin: 3.6rem 0 5.3rem;
+  }
+
+  ${mq.xs} {
+    margin: 3.2rem 0 4.8rem;
+  }
 `;
 
 export default MainContact;

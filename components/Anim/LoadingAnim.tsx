@@ -34,17 +34,17 @@ const component = css`
   z-index: 999;
 
   &.load {
-    animation-name: fadeOut;
     animation-delay: 1s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    animation-name: fadeOut;
     pointer-events: none;
   }
 
   & > div {
-    animation-name: fadeUp;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    animation-name: fadeUp;
   }
 
   @keyframes fadeOut {

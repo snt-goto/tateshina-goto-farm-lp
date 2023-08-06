@@ -6,6 +6,8 @@ import { MainTit } from 'components/Tit';
 
 import { setPageLink } from 'feature';
 
+import { mq } from 'styles/media';
+
 interface Props {}
 
 const MainNews = ({}: Props) => {
@@ -60,11 +62,35 @@ const component = css`
     width: 15rem;
     z-index: 1;
   }
+
+  ${mq.m} {
+    padding: 5.1rem 0;
+
+    & > img {
+      width: 13.5rem;
+    }
+  }
+
+  ${mq.xs} {
+    padding: 4.6rem 0;
+
+    & > img {
+      width: 12rem;
+    }
+  }
 `;
 
 const ulCss = css`
   list-style: none;
   margin-top: 5.4rem;
+
+  ${mq.m} {
+    margin-top: 4.9rem;
+  }
+
+  ${mq.xs} {
+    margin-top: 4.4rem;
+  }
 `;
 
 export default MainNews;

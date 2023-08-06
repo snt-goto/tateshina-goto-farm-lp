@@ -3,6 +3,8 @@ import { css } from '@emotion/react';
 import { MaxWidth } from 'components/Base';
 import { BgImg } from 'components/Elem';
 
+import { mq } from 'styles/media';
+
 interface Props {}
 
 const MainVisual = ({}: Props) => {
@@ -54,6 +56,42 @@ const component = css`
         top: -0.5rem;
         z-index: -1;
       }
+    }
+  }
+
+  ${mq.m} {
+    height: 90vh;
+
+    & h1 {
+      font-size: 1.9rem;
+      left: 65.7%;
+    }
+  }
+
+  ${mq.s} {
+    & h1 {
+      left: 10%;
+      letter-spacing: 0.1em;
+      line-height: 1.7;
+      bottom: 17%;
+      top: auto;
+      writing-mode: horizontal-tb;
+
+      & > span {
+        &::after {
+          bottom: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  ${mq.xs} {
+    height: 80vh;
+
+    & h1 {
+      font-size: 1.8rem;
+      left: 5%;
     }
   }
 `;

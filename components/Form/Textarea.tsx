@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 
 import { Required } from 'components/Form';
 
+import { mq } from 'styles/media';
+
 interface Props {
   label: string;
   name: string;
@@ -38,6 +40,22 @@ const component = css`
     padding: var(--form-padding);
     width: calc(100% - var(--form-label-width));
   }
+
+  ${mq.m} {
+    & > textarea {
+      height: 11.5rem;
+      width: calc(100% - var(--form-label-width_mq-m));
+    }
+  }
+
+  ${mq.s} {
+    align-items: flex-start;
+    flex-direction: column;
+
+    & > textarea {
+      width: 100%;
+    }
+  }
 `;
 
 const flex = css`
@@ -52,6 +70,16 @@ const flex = css`
     font-family: var(--noto-sans-jp);
     font-size: 1rem;
     font-weight: 700;
+  }
+
+  ${mq.m} {
+    width: var(--form-label-width_mq-m);
+  }
+
+  ${mq.s} {
+    justify-content: space-between;
+    margin-bottom: var(--form-mb);
+    width: 100%;
   }
 `;
 

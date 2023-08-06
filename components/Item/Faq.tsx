@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
 
+import { mq } from 'styles/media';
+
 interface Props {
   answer: string;
   question: string;
@@ -53,6 +55,18 @@ const answerArea = css`
     line-height: 1.5em;
     padding-top: 1.5rem;
   }
+
+  ${mq.m} {
+    & > p {
+      padding-top: 1.4rem;
+    }
+  }
+
+  ${mq.xs} {
+    & > p {
+      padding-top: 1.3rem;
+    }
+  }
 `;
 
 const component = css`
@@ -65,6 +79,18 @@ const component = css`
 
   &:hover {
     cursor: pointer;
+  }
+
+  ${mq.m} {
+    &:nth-child(n + 2) {
+      margin-top: 1.8rem;
+    }
+  }
+
+  ${mq.xs} {
+    &:nth-child(n + 2) {
+      margin-top: 1.6rem;
+    }
   }
 `;
 
@@ -105,6 +131,30 @@ const questionArea = css`
       font-size: 1.1rem;
       margin-right: auto;
       padding: 0 0.5rem;
+    }
+  }
+
+  ${mq.m} {
+    & > img {
+      width: 0.9rem;
+    }
+
+    & > p {
+      &:nth-of-type(1) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  ${mq.xs} {
+    & > img {
+      width: 0.8rem;
+    }
+
+    & > p {
+      &:nth-of-type(1) {
+        font-size: 1.3rem;
+      }
     }
   }
 `;

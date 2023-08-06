@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 
 import { LoadingAnim } from 'components/Anim';
 import { MainAccess, MainAbout, MainContact, MainFaq, MainNews, MainProduct, MainVisual } from 'components/Block';
-import { Footer, Hd, Header } from 'components/Layout';
+import { Footer, Hd, Header, MobileHeader } from 'components/Layout';
 
 interface Props {}
 
@@ -11,6 +11,7 @@ const Home: NextPage<Props> = () => {
     <>
       <Hd />
       <LoadingAnim />
+      <MobileHeader />
       <MainVisual />
       <Header />
       <MainAbout />

@@ -7,7 +7,7 @@ interface Props {
   menu: string;
 }
 
-const FooterNav = ({ href, menu }: Props) => {
+const MobileNav = ({ href, menu }: Props) => {
   return (
     <li css={component}>
       <a href={href}>{menu}</a>
@@ -16,15 +16,11 @@ const FooterNav = ({ href, menu }: Props) => {
 };
 
 const component = css`
-  &:nth-child(n + 2) {
-    margin-left: 1.5rem;
-  }
-
   & > a {
     color: var(--color-1);
     display: inline-block;
     font-family: var(--noto-sans-jp);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     text-decoration: none;
     transition-duration: 0.3s;
@@ -38,15 +34,9 @@ const component = css`
 
   ${mq.m} {
     &:nth-child(n + 2) {
-      margin: 1.4rem 0 0;
-    }
-  }
-
-  ${mq.xs} {
-    &:nth-child(n + 2) {
-      margin: 1.3rem 0 0;
+      margin-top: 1.1rem;
     }
   }
 `;
 
-export default FooterNav;
+export default MobileNav;

@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
 import { ReactNode } from 'react';
 
+import { mq } from 'styles/media';
+
 interface Props {
   children: ReactNode;
   width: string;
@@ -29,6 +31,26 @@ const component = css`
 
   &.width-90 {
     width: 90%;
+  }
+
+  ${mq.m} {
+    &.width-60 {
+      width: 75%;
+    }
+
+    &.width-70 {
+      width: 80%;
+    }
+  }
+
+  ${mq.xs} {
+    &.width-60 {
+      width: 90%;
+    }
+
+    &.width-70 {
+      width: 90%;
+    }
   }
 `;
 
